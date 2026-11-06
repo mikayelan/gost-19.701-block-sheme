@@ -1,0 +1,158 @@
+:root {
+  --bg: #F8FAFC;
+  --panel: #FFFFFF;
+  --line: #E2E8F0;
+  --ink: #0F172A;
+  --muted: #64748B;
+  --accent: #1E40AF;
+  --accent2: #059669;
+}
+* { box-sizing: border-box }
+html,body,#root { height: 100% }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 22px;
+  background: #0F172A;
+  color: white;
+  border-bottom: 1px solid #1E293B;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.header-left h1 {
+  margin: 8px 0 4px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.header-left h1 span {
+  font-weight: 600;
+  color: #93C5FD;
+}
+.subtitle { margin: 0; color: #CBD5E1; font-size: 13px }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #1E293B; border: 1px solid #334155; color: #E2E8F0;
+  padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 6px rgba(34,197,94,.15) }
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; min-width: 220px }
+.stats { display: flex; gap: 14px; font-size: 12px; color: #CBD5E1; align-items: center }
+.stats b { color: white }
+.status.ok { color: #86EFAC; font-weight: 700 }
+.ghost-link { color: #93C5FD; text-decoration: none; font-size: 12px; font-weight: 600; border: 1px solid #334155; padding: 6px 10px; border-radius: 8px; background: #111B2F }
+.ghost-link:hover { background: #1E293B }
+
+.layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+}
+.panel.left {
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 14px;
+  overflow: auto;
+}
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px }
+.panel-head h2 { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #334155 }
+.select {
+  padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; font-size: 12px; font-weight: 600; background: white; color: #1E293B; min-width: 190px
+}
+.editor-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #0B1220; box-shadow: 0 4px 16px rgba(15,23,42,.08) }
+.editor-toolbar { display: flex; justify-content: space-between; padding: 8px 12px; background: #0F172A; color: #94A3B8; font-size: 11px; font-weight: 600; letter-spacing: .02em }
+.lines { color: #60A5FA; font-family: 'JetBrains Mono', monospace }
+.code-input {
+  width: 100%; min-height: 280px; background: #0B1220; color: #E2E8F0; border: 0; padding: 14px 14px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; line-height: 1.6; resize: vertical;
+  outline: none; tab-size: 2;
+}
+.code-input:focus { background: #0E172A }
+.controls { display: flex; flex-direction: column; gap: 10px; background: #F8FAFC; border: 1px solid var(--line); border-radius: 12px; padding: 12px }
+.field { display: flex; flex-direction: column; gap: 6px; font-size: 11px; font-weight: 700; color: #475569; letter-spacing: .06em; text-transform: uppercase }
+.input { padding: 8px 10px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 13px; font-weight: 600; background: white }
+.toggles { display: flex; gap: 16px; font-size: 12px; font-weight: 600 }
+.check { display: flex; align-items: center; gap: 6px; color: #334155 }
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
+.btn {
+  padding: 10px 12px; border-radius: 10px; border: 1px solid #CBD5E1; background: white; font-size: 12px; font-weight: 700; cursor: pointer; text-align: center;
+}
+.btn:hover { background: #F1F5F9; transform: translateY(-1px) }
+.btn.primary { background: #1E40AF; color: white; border-color: #1E40AF; grid-column: 1 / -1; font-size: 13px; letter-spacing: .02em }
+.btn.primary:hover { background: #1E3A8A }
+.btn.ghost { background: #F8FAFC; border-style: dashed; color: #334155 }
+
+.hint, .legend {
+  background: white; border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+}
+.hint h3, .legend h3 { margin: 0 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #0F172A }
+.hint ol { margin: 0 0 8px 18px; padding: 0; font-size: 12px; color: #334155; line-height: 1.6 }
+.hint .muted, .footer .muted { color: var(--muted); font-size: 11px }
+.hint code { background: #F1F5F9; padding: 1px 6px; border-radius: 6px; font-size: 11px; border: 1px solid #E2E8F0 }
+.legend-grid { display: grid; grid-template-columns: 1fr; gap: 7px }
+.leg { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; color: #334155; background: #F8FAFC; padding: 7px 9px; border-radius: 8px; border: 1px solid #E2E8F0 }
+.shape { width: 22px; height: 14px; border: 2px solid #334155; display: inline-block; flex-shrink: 0; background: white }
+.shape.oval { border-radius: 999px; background: #FFF7ED; border-color: #9A3412 }
+.shape.rect { border-radius: 3px; background: #EFF6FF; border-color: #1E40AF }
+.shape.para { transform: skewX(-14deg); background: #FEFCE8; border-color: #854D0E }
+.shape.rhomb { transform: rotate(45deg) scale(.78); width: 16px; height: 16px; background: #F0FDF4; border-color: #166534 }
+.shape.hex { clip-path: polygon(14% 0, 86% 0, 100% 50%, 86% 100%, 14% 100%, 0 50%); background: #FDF2F8; border: 2px solid #9D174D; border-color: #9D174D }
+.shape.predef { position: relative; background: #F5F3FF; border-color: #5B21B6; }
+.shape.circle { border-radius: 50%; width: 16px; height: 16px; background: #F1F5F9; border-color: #334155 }
+
+.canvas-area {
+  display: flex; flex-direction: column; min-width: 0; background: #F1F5F9;
+}
+.canvas-toolbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 14px; background: white; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 5;
+}
+.zoom-group { display: flex; align-items: center; gap: 6px; background: #F8FAFC; border: 1px solid var(--line); padding: 4px; border-radius: 999px }
+.zoom-group button { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #CBD5E1; background: white; font-weight: 700; cursor: pointer }
+.zoom-group button.reset { width: auto; padding: 0 10px; border-radius: 999px; font-size: 11px }
+.zoom-group span { font-size: 12px; font-weight: 800; min-width: 44px; text-align: center }
+.canvas-title { font-size: 11px; font-weight: 700; color: #475569; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.badge-sm { background: #0F172A; color: #BAE6FD; padding: 6px 10px; border-radius: 999px; font-size: 11px; font-weight: 700 }
+
+.canvas-viewport {
+  flex: 1; overflow: auto; padding: 30px; position: relative; background: #F1F5F9;
+  background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.canvas-viewport.strict { background: white; background-image: none }
+.grid { position: absolute; inset: 0; pointer-events: none; opacity: .6 }
+.svg-wrap { background: white; border: 1px solid #CBD5E1; border-radius: 14px; box-shadow: 0 12px 36px rgba(15,23,42,.12), 0 2px 8px rgba(15,23,42,.08); display: inline-block; padding: 18px }
+.canvas-footer {
+  padding: 10px 14px; background: #0F172A; color: #CBD5E1; font-size: 11px; text-align: center
+}
+.canvas-footer a { color: #93C5FD }
+
+.footer {
+  display: flex; justify-content: space-between; gap: 12px; padding: 12px 18px; background: white; border-top: 1px solid var(--line); font-size: 11px; font-weight: 600; color: #334155
+}
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr }
+  .panel.left { border-right: 0; border-bottom: 1px solid var(--line) }
+  .header { flex-direction: column }
+  .header-right { align-items: flex-start }
+}

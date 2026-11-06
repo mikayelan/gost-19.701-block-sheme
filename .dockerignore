@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+examples
+*.drawio
+Unselected files
+.npm
+.idea
+.vscode
+README.md
+DOCKER.md

@@ -1,0 +1,33 @@
+name: gost-block-shema
+
+services:
+  gost:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gost-19.701:1.0
+    container_name: gost-19.701
+    ports:
+      - "3000:80"  # откроешь http://localhost:3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "gost=19.701-90"
+      - "senior=33y"
+
+  # Опционально: dev режим с hot-reload (раскомментируй если надо)
+  # gost-dev:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   ports:
+  #     - "5173:5173"
+  #   volumes:
+  #     - ./src:/app/src
+  #     - ./public:/app/public
+  #   command: npm run dev -- --host 0.0.0.0 --port 5173
