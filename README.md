@@ -4,13 +4,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/mikayelan/gost-19.701-block-sheme)](https://hub.docker.com/r/mikayelan/gost-19.701-block-sheme)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GOST](https://img.shields.io/badge/GOST-19.701--90-blue)](https://docs.cntd.ru/document/1200030156)
-[![Senior](https://img.shields.io/badge/Senior-33y-red)]()
+[![Author](https://img.shields.io/badge/сделано-Микаеляном-9D174D)]()
 
 **Кидаешь код → получаешь каноничную блок-схему по ГОСТ 19.701-90 + готовый `.drawio` для diagrams.net / диплома.**
 
-> Сделано Senior Developer 33 года стажа. Понимает Python, JS, C++, Pascal и псевдокод на русском.
-
-![preview](https://via.placeholder.com/900x400/0F172A/FFFFFF?text=GOST+19.701-90+Preview)
+> Сделано Микаеляном. Понимает Python, JS, C++, Pascal и псевдокод на русском.
 
 ---
 
@@ -23,8 +21,6 @@ docker pull mikayelan/gost-19.701-block-sheme:latest
 docker run -d -p 3000:80 --name gost --restart unless-stopped mikayelan/gost-19.701-block-sheme:latest
 # открой http://localhost:3000
 ```
-
-> Замени `mikayelan` на свой Docker Hub логин после пуша (см. ниже).
 
 ### Вариант B — Из репозитория
 
@@ -126,16 +122,15 @@ print(fact)
 
 Файл `.github/workflows/docker.yml` автоматически:
 
-- Собирает `linux/amd64 + linux/arm64`
+- Собирает `linux/amd64`
 - Пушит в **GHCR** (`ghcr.io/mikayelan/gost-19.701-block-sheme`)
-- Пушит в **Docker Hub** (если заданы secrets `DOCKERHUB_mikayelanNAME` / `DOCKERHUB_TOKEN`)
 
-### Настройка Docker Hub:
+### Настройка Docker Hub (опционально):
 
 1. Создай аккаунт: https://hub.docker.com
 2. Access Token: Account Settings → Security → New Access Token (Read & Write)
 3. В GitHub: `Settings → Secrets and variables → Actions → New repository secret`
-   - `DOCKERHUB_mikayelanNAME` = твой логин
+   - `DOCKERHUB_USERNAME` = твой логин
    - `DOCKERHUB_TOKEN` = токен
 4. Сделай `git push` → Actions соберёт и запушит `mikayelan/gost-19.701-block-sheme:latest`
 
@@ -174,7 +169,7 @@ gost-19.701-block-sheme/
 
 ## 📄 Лицензия
 
-MIT — делай что хочешь, только сохрани авторство. Senior 33y, 2026.
+MIT — сделано Микаеляном, 2026.
 
 ---
 

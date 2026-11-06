@@ -1,7 +1,9 @@
 {
-  "name": "gost-shema",
-  "private": true,
-  "version": "0.0.0",
+  "name": "gost-19.701-block-sheme",
+  "private": false,
+  "version": "1.0.0",
+  "author": "Микаелян <mikayelan@github>",
+  "description": "Генератор блок-схем по ГОСТ 19.701-90 → draw.io — сделано Микаеляном",
   "type": "module",
   "scripts": {
     "dev": "vite",

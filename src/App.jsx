@@ -417,7 +417,7 @@ export default function App() {
       <header className="header">
         <div className="header-left">
           <div className="badge"><span className="dot" /> ГОСТ 19.701-90 • ЕСПД</div>
-          <h1>Генератор блок-схем <span>по ГОСТу — Senior 33 года</span></h1>
+          <h1>Генератор блок-схем <span>по ГОСТу — сделано Микаеляном</span></h1>
           <p className="subtitle">Кидаешь код → получаешь каноничную блок-схему + <b>.drawio</b> для diagrams.net / защиты диплома</p>
         </div>
         <div className="header-right">
@@ -558,8 +558,8 @@ export default function App() {
       </div>
 
       <footer className="footer">
-        <span>Сделано сениором 33 года стажа • ГОСТ 19.701-90 (Схемы алгоритмов, программ, данных и систем) • Символы: ГОСТ 19.003-80 • Экспорт: draw.io / diagrams.net mxfile</span>
-        <span className="muted">© 2026 ГОСТ-Схема • v1.0 Senior Edition</span>
+        <span>Сделано Микаеляном • ГОСТ 19.701-90 (Схемы алгоритмов, программ, данных и систем) • Символы: ГОСТ 19.003-80 • Экспорт: draw.io / diagrams.net mxfile</span>
+        <span className="muted">© 2026 Микаелян • v1.0</span>
       </footer>
     </div>
   )

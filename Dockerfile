@@ -1,4 +1,4 @@
-# ГОСТ 19.701-90 Генератор блок-схем — Senior 33 года Edition
+# ГОСТ 19.701-90 Генератор блок-схем — сделано Микаеляном
 # Multi-stage build: собираем Vite + отдаём через nginx
 
 # === Stage 1: Build ===
@@ -26,9 +26,9 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # GOST мета
-LABEL maintainer="Senior 33 years <gost@gost.ru>" \
-      description="Генератор блок-схем по ГОСТ 19.701-90 → draw.io" \
-      version="1.0-gost"
+LABEL maintainer="Mikayelan <mikayelan@github>" \
+      description="Генератор блок-схем по ГОСТ 19.701-90 → draw.io — сделано Микаеляном" \
+      version="1.0"
 
 EXPOSE 80
 
