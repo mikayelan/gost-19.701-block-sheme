@@ -1,7 +1,7 @@
 # ГОСТ 19.701-90 — Генератор блок-схем → draw.io
 
-[![Docker Build](https://github.com/USER/gost-19.701-block-sheme/actions/workflows/docker.yml/badge.svg)](https://github.com/USER/gost-19.701-block-sheme/actions/workflows/docker.yml)
-[![Docker Pulls](https://img.shields.io/docker/pulls/USER/gost-19.701-block-sheme)](https://hub.docker.com/r/USER/gost-19.701-block-sheme)
+[![Docker Build](https://github.com/mikayelan/gost-19.701-block-sheme/actions/workflows/docker.yml/badge.svg)](https://github.com/mikayelan/gost-19.701-block-sheme/actions/workflows/docker.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/mikayelan/gost-19.701-block-sheme)](https://hub.docker.com/r/mikayelan/gost-19.701-block-sheme)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GOST](https://img.shields.io/badge/GOST-19.701--90-blue)](https://docs.cntd.ru/document/1200030156)
 [![Senior](https://img.shields.io/badge/Senior-33y-red)]()
@@ -19,17 +19,17 @@
 ### Вариант A — Docker Hub (самый лёгкий)
 
 ```bash
-docker pull USER/gost-19.701-block-sheme:latest
-docker run -d -p 3000:80 --name gost --restart unless-stopped USER/gost-19.701-block-sheme:latest
+docker pull mikayelan/gost-19.701-block-sheme:latest
+docker run -d -p 3000:80 --name gost --restart unless-stopped mikayelan/gost-19.701-block-sheme:latest
 # открой http://localhost:3000
 ```
 
-> Замени `USER` на свой Docker Hub логин после пуша (см. ниже).
+> Замени `mikayelan` на свой Docker Hub логин после пуша (см. ниже).
 
 ### Вариант B — Из репозитория
 
 ```bash
-git clone https://github.com/USER/gost-19.701-block-sheme.git
+git clone https://github.com/mikayelan/gost-19.701-block-sheme.git
 cd gost-19.701-block-sheme
 
 # Windows: двойной клик по run.bat
@@ -127,21 +127,21 @@ print(fact)
 Файл `.github/workflows/docker.yml` автоматически:
 
 - Собирает `linux/amd64 + linux/arm64`
-- Пушит в **GHCR** (`ghcr.io/USER/gost-19.701-block-sheme`)
-- Пушит в **Docker Hub** (если заданы secrets `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN`)
+- Пушит в **GHCR** (`ghcr.io/mikayelan/gost-19.701-block-sheme`)
+- Пушит в **Docker Hub** (если заданы secrets `DOCKERHUB_mikayelanNAME` / `DOCKERHUB_TOKEN`)
 
 ### Настройка Docker Hub:
 
 1. Создай аккаунт: https://hub.docker.com
 2. Access Token: Account Settings → Security → New Access Token (Read & Write)
 3. В GitHub: `Settings → Secrets and variables → Actions → New repository secret`
-   - `DOCKERHUB_USERNAME` = твой логин
+   - `DOCKERHUB_mikayelanNAME` = твой логин
    - `DOCKERHUB_TOKEN` = токен
-4. Сделай `git push` → Actions соберёт и запушит `USER/gost-19.701-block-sheme:latest`
+4. Сделай `git push` → Actions соберёт и запушит `mikayelan/gost-19.701-block-sheme:latest`
 
 После этого братка сможет:
 ```bash
-docker pull USER/gost-19.701-block-sheme:latest
+docker pull mikayelan/gost-19.701-block-sheme:latest
 ```
 
 ---
