@@ -30,14 +30,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Login to Docker Hub (optional)
-        if: github.event_name != 'pull_request' && secrets.DOCKERHUB_USERNAME != '' && secrets.DOCKERHUB_TOKEN != ''
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Extract metadata (GHCR only - always works)
+      - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
@@ -56,10 +49,4 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          platforms: linux/amd64,linux/arm64
-
-      # --- Optional: push to Docker Hub if secrets are set ---
-      # Раскомментируй этот джоб после добавления DOCKERHUB_USERNAME / DOCKERHUB_TOKEN в Secrets
-      # Или оставь как есть — GHCR уже работает без Docker Hub
+          platforms: linux/amd64
